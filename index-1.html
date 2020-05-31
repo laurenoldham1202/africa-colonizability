@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Colonizability of Africa</title>
+
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin:0;
+      padding:0;
+      font-family: 'Roboto', sans-serif, bold;
+    }
+
+
+    #map {
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      z-index: -5;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmVub2xkaGFtMTIwMiIsImEiOiJjaW55dm9lemUxOGc1dWttMzI5dDI5aGtvIn0.3xAukiULCDm0OId5yIgXOA';
+
+  map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/laurenoldham1202/ckave6fyn0jbv1ip8wsslxnum',  // tiles
+    // style: 'mapbox://styles/mapbox/light-v9',  // tiles
+    zoom: 1,
+    doubleClickZoom: false,  // prevent zooming when images are deselected via double click
+  });
+
+  // const sitesJson = d3.json('data/edits/distances-sites-GCD.json');
+  // const schoolsJson = d3.json('data/edits/schools-wtAvg.json');
+
+  // Promise.all([sitesJson, schoolsJson, seedsJson, seedsAggJson, confJson, colorsJson, d1Json]).then(onLoad);
+  Promise.all([]).then(onLoad);
+
+  function onLoad(data) {
+    // const sites = data[0];
+
+    map.on('load', () => {
+
+    });
+
+  }
+
+
+
+</script>
+
+</body>
+</html>

@@ -71,6 +71,7 @@
 <div id="features">
     <section id="intro" class="active">
         <h1>Colonizability of Africa</h1>
+        <div class="tmp" style="background: rgba(255,255,230,0.2); color: papayawhip; padding: 0.5rem 1rem; border-radius: 4px; font-weight: 200;">
         <p>
             Part of the map series created by John George Bartholomew (cartographer) and Harry Hamilton Johnston
             (author) in <a href="https://library.si.edu/digital-library/book/historyofcoloni00john" target="_blank">
@@ -81,6 +82,7 @@
             Originally published in the late nineteenth century, Johnston's work serves as a time capsule into the
             political context of the colonization of Africa.
         </p>
+        </div>
     </section>
     <section id="chapter-1">
         <h3>Map Scale</h3>
@@ -179,6 +181,7 @@
             bearing: 0.00
         },
         'chapter-1': {
+            duration: 3000,
             center: { lon: 18.74352, lat: 1.42789 },
             zoom: 3,
             pitch: 0.00,
@@ -249,7 +252,7 @@
     function isElementOnScreen(id) {
         var element = document.getElementById(id);
         var bounds = element.getBoundingClientRect();
-        return bounds.top < window.innerHeight && bounds.bottom > 0;
+        return bounds.top < window.innerHeight && bounds.bottom > 400;
     }
 
 </script>

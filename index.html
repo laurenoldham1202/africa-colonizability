@@ -6,7 +6,12 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
 
     <style>
         body { margin: 0; padding: 0; }
@@ -65,9 +70,30 @@
         font-family: 'Bitter', serif;
     }
 
+    .quote {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        margin-right: 30%;
+        right: 1rem;
+        max-width: 70%;
+        z-index: 1000;
+        border-radius: 4px;
+        background: rgba(0,0,0,0.75);
+        color: #FBF6D4;
+        padding: 1rem;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        /*font-family: 'Courgette', cursive;*/
+        font-family: 'Open Sans Condensed', sans-serif;
+
+    }
+
 </style>
 
-<div id="map"></div>
+<div id="map">
+    <div class="quote">HELLO</div>
+</div>
 <div id="features">
     <section id="intro" class="active">
         <h1>Colonizability of Africa</h1>
@@ -109,9 +135,9 @@
             rivers, and other natural features and settlements in great detail.
         </p>
         <p>
-            The purpose of this map is not to prove the superiority of white European settlers; the purpose of this map
-            is to outline <em>where Africa will be most useful and profitable to white European settlers.</em> It is
-            therefore important to list and map all potential resources the continent could provide, as well as
+            The purpose of this map is not to prove the superiority of white European settlers; rather, the purpose of
+            this map is to outline <em>where Africa will be most useful and profitable to white European settlers.</em>
+            It is therefore important to list and map all potential resources the continent could provide, as well as
             potentially hazardous or difficult areas to settle.
         </p>
     </section>
@@ -249,11 +275,83 @@
         }
     };
 
+    quoteMap = {
+        'chapter-4': {
+            color: '#e1a572',
+            quote: `"There is, to begin with, that much
+            restricted healthy area lying outside the tropics (or in rare
+            instances, at great altitudes inside the tropics), where the
+            climate is salubrious and Europeans can support existence under
+            much the same conditions as in their native lands. Here they
+            can freely rear children to form in time a native European race;
+            and in these regions (except in parts of South Africa) there is
+            no dense native population to dispute by force or by an appeal
+            to common fairness the possession of the soil. These lands of
+            the first category are of relatively small extent compared to the
+            mass of Africa."`,
+            quote_alt: `"There is, to begin with, that much
+            restricted healthy area lying outside the tropics (or in rare
+            instances, at great altitudes inside the tropics), where the
+            climate is salubrious and Europeans can support existence under
+            much the same conditions as in their native lands. Here they
+            can freely rear children to form in time a native European race;
+            and in these regions (except in parts of South Africa) there is
+            no dense native population to dispute by force or by an appeal
+            to common fairness the possession of the soil. These lands of
+            the first category are of relatively small extent compared to the
+            mass of Africa."`
+        },
+        'chapter-5': {
+            color: '#fdeb7f',
+            quote: `"The second category consists of countries...where climatic
+            conditions and soil are not wholly opposed to the healthful
+            settlement of Europeans, but where the competition or numerical
+            strength or martial spirit of the natives already in possession
+            are factors opposed to the substitution of a large European
+            population for the present owners of the soil."`,
+            quote_alt: `"The second description of
+            territory I should qualify as 'tributary states,' countries where
+            good and settled government cannot be maintained by the
+            natives without the control of a European power, the European
+            power retaining in return for the expense and trouble of such
+            control the gratification of performing a good and interesting
+            work, and a field of employment and profitable enterprise for a
+            few of her choicer sons and daughters."`
+        },
+        'chapter-6': {
+            color: '#c0b887',
+            quote: `"The third category consists of the remainder of Africa,
+            mainly tropical, where the climatic conditions make it impossible
+            for Europeans to cultivate the soil with their own hands, to
+            settle for many years, or to bring up healthy families."`,
+            quote_alt: `"The third category
+            consists of 'plantation colonies'—vast territories to be governed
+            as India is governed, autocratically but wisely and as far as
+            possible through native chiefs and councils, with the first aim of
+            securing good government and a reasonable degree of civilization
+            to a large population of races at present inferior in culture and
+            mentality to the European. Here, however, the European may
+            come, in small numbers, with his capital, his energy, and his
+            knowledge to develop a most lucrative commerce, and obtain
+            products necessary to the use of his advanced civilization."`
+        }
+    };
+
     // On every scroll event, check which element is on screen
     window.onscroll = function() {
         var chapterNames = Object.keys(chapters);
         for (var i = 0; i < chapterNames.length; i++) {
             var chapterName = chapterNames[i];
+
+            const quote = $('.quote');
+            const quotedChapters = ['chapter-4', 'chapter-5', 'chapter-6'];
+            quotedChapters.forEach(chapter => {
+                if (chapterName === chapter) {
+                    quote.css('color', quoteMap[chapter].color);
+                    quote.text(quoteMap[chapter].quote_alt);
+                }
+            });
+
             if (isElementOnScreen(chapterName)) {
                 setActiveChapter(chapterName);
                 break;
@@ -283,303 +381,3 @@
 
 </body>
 </html>
-
-
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    <meta charset='utf-8' />-->
-<!--    <title>March Madness</title>-->
-
-<!--    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />-->
-<!--    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>-->
-<!--    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />-->
-<!--    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>-->
-<!--    <script src="https://unpkg.com/scrollama"></script>-->
-<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
-
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Palanquin&display=swap" rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-
-<!--    <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">-->
-<!--    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>-->
-
-<!--    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">-->
-
-<!--    <style>-->
-<!--        body {-->
-<!--            margin:0;-->
-<!--            padding:0;-->
-<!--            /*font-family: sans-serif;*/-->
-<!--            font-family: 'Roboto', sans-serif;-->
-<!--        }-->
-
-<!--        a, a:hover, a:visited {-->
-<!--            color: #0071bc;-->
-<!--        }-->
-
-<!--        #map {-->
-<!--            top: 0;-->
-<!--            height: 100vh;-->
-<!--            width: 100vw;-->
-<!--            position: fixed;-->
-<!--            z-index: -5;-->
-<!--        }-->
-
-<!--        #header {-->
-<!--            margin: 3vh auto;-->
-<!--            width: 90vw;-->
-<!--            padding: 2vh;-->
-<!--            text-align: center;-->
-<!--        }-->
-<!--        #footer {-->
-<!--            width: 100%;-->
-<!--            min-height: 5vh;-->
-<!--            padding-top: 2vh;-->
-<!--            padding-bottom: 2vh;-->
-<!--            text-align: center;-->
-<!--            line-height: 25px;-->
-<!--            font-size: 13px;-->
-<!--        }-->
-<!--        #features {-->
-<!--            padding-top: 10vh;-->
-<!--            padding-bottom: 10vh;-->
-<!--            z-index: 100;-->
-<!--        }-->
-<!--        .centered {-->
-<!--            width: 50vw;-->
-<!--            margin: 0 auto;-->
-<!--        }-->
-<!--        .lefty {-->
-<!--            width: 33vw;-->
-<!--            margin-left: 5vw;-->
-<!--        }-->
-<!--        .righty {-->
-<!--            width: 33vw;-->
-<!--            margin-left: 62vw;-->
-<!--        }-->
-<!--        .light {-->
-<!--            color: #444;-->
-<!--            background-color: #fafafa;-->
-<!--        }-->
-<!--        .dark {-->
-<!--            color: #fafafa;-->
-<!--            background-color: #444;-->
-<!--        }-->
-<!--        .step {-->
-<!--            padding-bottom: 50vh;-->
-<!--            /* margin-bottom: 10vh; */-->
-<!--            opacity: 0.25;-->
-<!--        }-->
-<!--        .step.active {-->
-<!--            opacity: 0.9;-->
-<!--        }-->
-
-<!--        .step div {-->
-<!--            padding:  25px 50px;-->
-<!--            line-height: 25px;-->
-<!--            font-size: 13px;-->
-<!--        }-->
-
-<!--        .step img {-->
-<!--            width: 100%;-->
-<!--        }-->
-
-<!--        @media (max-width: 750px) {-->
-<!--            #features {-->
-<!--                width: 90vw;-->
-<!--                margin: 0 auto;-->
-<!--            }-->
-<!--        }-->
-<!--        </style>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<div id="map"></div>-->
-<!--<div id="story"></div>-->
-
-<!--<script src="./config.js"></script>-->
-<!--<script>-->
-
-<!--var layerTypes = {-->
-<!--    'fill': ['fill-opacity'],-->
-<!--    'line': ['line-opacity'],-->
-<!--    'circle': ['circle-opacity', 'circle-stroke-opacity'],-->
-<!--    'symbol': ['icon-opacity', 'text-opacity'],-->
-<!--    'raster': ['raster-opacity'],-->
-<!--    'fill-extrusion': ['fill-extrusion-opacity']-->
-<!--};-->
-
-<!--var alignments = {-->
-<!--    'left': 'lefty',-->
-<!--    'center': 'centered',-->
-<!--    'right': 'righty'-->
-<!--};-->
-
-<!--function getLayerPaintType(layer) {-->
-<!--    if (map.getLayer(layer)) {-->
-<!--        var layerType = map.getLayer(layer).type;-->
-<!--        return layerTypes[layerType];-->
-<!--    }-->
-<!--}-->
-
-<!--function setLayerOpacity(layer) {-->
-<!--    var paintProps = getLayerPaintType(layer.layer);-->
-<!--    if (paintProps) {-->
-<!--        paintProps.forEach(function (prop) {-->
-<!--            map.setPaintProperty(layer.layer, prop, layer.opacity);-->
-<!--        });-->
-<!--    }-->
-<!--}-->
-
-<!--var story = document.getElementById('story');-->
-<!--var features = document.createElement('div');-->
-<!--features.classList.add(alignments[config.alignment]);-->
-<!--features.setAttribute('id', 'features');-->
-
-<!--var header = document.createElement('div');-->
-
-<!--if (config.title) {-->
-<!--    var titleText = document.createElement('h1');-->
-<!--    titleText.innerText = config.title;-->
-<!--    header.appendChild(titleText);-->
-<!--}-->
-
-<!--if (config.subtitle) {-->
-<!--    var subtitleText = document.createElement('h2');-->
-<!--    subtitleText.innerText = config.subtitle;-->
-<!--    header.appendChild(subtitleText);-->
-<!--}-->
-
-<!--if (config.byline) {-->
-<!--    var bylineText = document.createElement('p');-->
-<!--    bylineText.innerText = config.byline;-->
-<!--    header.appendChild(bylineText);-->
-<!--}-->
-
-<!--if (header.innerText.length > 0) {-->
-<!--    header.classList.add(config.theme);-->
-<!--    header.setAttribute('id', 'header');-->
-<!--    story.appendChild(header);-->
-<!--}-->
-
-<!--config.chapters.forEach((record, idx) => {-->
-<!--    var container = document.createElement('div');-->
-<!--    var chapter = document.createElement('div');-->
-
-<!--    if (record.title) {-->
-<!--        var title = document.createElement('h3');-->
-<!--        title.innerText = record.title;-->
-<!--        chapter.appendChild(title);-->
-<!--    }-->
-
-<!--    if (record.image) {-->
-<!--        var image = new Image();-->
-<!--        image.src = record.image;-->
-<!--        chapter.appendChild(image);-->
-<!--    }-->
-
-<!--    if (record.description) {-->
-<!--        var story = document.createElement('p');-->
-<!--        story.innerHTML = record.description;-->
-<!--        chapter.appendChild(story);-->
-<!--    }-->
-
-<!--    container.setAttribute('id', record.id);-->
-<!--    container.classList.add('step');-->
-<!--    if (idx === 0) {-->
-<!--        container.classList.add('active');-->
-<!--    }-->
-
-<!--    chapter.classList.add(config.theme);-->
-<!--    container.appendChild(chapter);-->
-<!--    features.appendChild(container);-->
-<!--});-->
-
-<!--story.appendChild(features);-->
-
-<!--var footer = document.createElement('div');-->
-
-<!--if (config.footer) {-->
-<!--    var footerText = document.createElement('p');-->
-<!--    footerText.innerHTML = config.footer;-->
-<!--    footer.appendChild(footerText);-->
-<!--}-->
-
-<!--if (footer.innerText.length > 0) {-->
-<!--    footer.classList.add(config.theme);-->
-<!--    footer.setAttribute('id', 'footer');-->
-<!--    story.appendChild(footer);-->
-<!--}-->
-
-<!--mapboxgl.accessToken = config.accessToken;-->
-
-<!--const transformRequest = (url) => {-->
-<!--    const hasQuery = url.indexOf("?") !== -1;-->
-<!--    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";-->
-<!--    return {-->
-<!--      url: url + suffix-->
-<!--    }-->
-<!--};-->
-
-<!--var map = new mapboxgl.Map({-->
-<!--    container: 'map',-->
-<!--    style: config.style,-->
-<!--    center: config.chapters[0].location.center,-->
-<!--    zoom: config.chapters[0].location.zoom,-->
-<!--    bearing: config.chapters[0].location.bearing,-->
-<!--    pitch: config.chapters[0].location.pitch,-->
-<!--    scrollZoom: false,-->
-<!--    transformRequest: transformRequest-->
-<!--});-->
-
-<!--var marker = new mapboxgl.Marker();-->
-<!--if (config.showMarkers) {-->
-<!--    marker.setLngLat(config.chapters[0].location.center).addTo(map);-->
-<!--}-->
-
-<!--// instantiate the scrollama-->
-<!--var scroller = scrollama();-->
-
-<!--story = $('#story');-->
-
-<!--map.on("load", function() {-->
-<!--    // setup the instance, pass callback functions-->
-<!--    scroller-->
-<!--    .setup({-->
-<!--        step: '.step',-->
-<!--        offset: 0.5,-->
-<!--        progress: true-->
-<!--    })-->
-<!--    .onStepEnter(response => {-->
-<!--        var chapter = config.chapters.find(chap => chap.id === response.element.id);-->
-<!--        response.element.classList.add('active');-->
-<!--        map.flyTo(chapter.location);-->
-<!--        if (config.showMarkers) {-->
-<!--            marker.setLngLat(chapter.location.center);-->
-<!--        }-->
-<!--        if (chapter.onChapterEnter.length > 0) {-->
-<!--            chapter.onChapterEnter.forEach(setLayerOpacity);-->
-<!--        }-->
-<!--    })-->
-<!--    .onStepExit(response => {-->
-<!--        var chapter = config.chapters.find(chap => chap.id === response.element.id);-->
-<!--        response.element.classList.remove('active');-->
-<!--        if (chapter.onChapterExit.length > 0) {-->
-<!--            chapter.onChapterExit.forEach(setLayerOpacity);-->
-<!--        }-->
-<!--    });-->
-<!--});-->
-
-<!--// setup resize event-->
-<!--window.addEventListener('resize', scroller.resize);-->
-
-<!--</script>-->
-
-<!--</body>-->
-<!--</html>-->

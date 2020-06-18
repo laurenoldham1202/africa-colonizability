@@ -84,11 +84,9 @@
         padding: 1rem;
         font-size: 1.5rem;
         line-height: 1.75rem;
-        /*font-family: 'Courgette', cursive;*/
         font-family: 'Open Sans Condensed', sans-serif;
         visibility: hidden;
-        transition: 0.5s visibility ease-in-out;
-
+        /*transition: 0.5s visibility ease-in-out;*/
     }
 
 </style>
@@ -241,9 +239,6 @@
         },
         'chapter-3': {
             duration: 3000,
-            // center: { lon: 12.88395, lat: -55.84463 },
-            // zoom: 2.89,
-            // bearing: 90,
             center: { lon: -18.57624, lat: -46.20872 },
             zoom: 5.25,
             pitch: 19.50,
@@ -251,7 +246,6 @@
         },
         'chapter-4': {
             duration: 3000,
-
             center: { lon: 24.80847, lat: -25.69372 },
             zoom: 4.09,
             pitch: 0.00,
@@ -273,11 +267,10 @@
         },
         'chapter-7': {
             duration: 3000,
-
-            bearing: 90,
-            center: [-0.12416858, 51.50779757],
-            zoom: 14.3,
-            pitch: 20
+            center: { lon: 18.74352, lat: 1.42789 },
+            zoom: 3,
+            pitch: 0.00,
+            bearing: 0.00
         }
     };
 
@@ -355,7 +348,7 @@
 
             quotedChapters.forEach(chapter => {
                 if (chapterName === chapter) {
-                    quote.css('color', quoteMap[chapter].color);
+                    // quote.css('color', quoteMap[chapter].color);
                     quote.css('visibility', 'visible');
                     quote.text(quoteMap[chapter].quote_alt);
                 }

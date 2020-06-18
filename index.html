@@ -86,13 +86,15 @@
         line-height: 1.75rem;
         /*font-family: 'Courgette', cursive;*/
         font-family: 'Open Sans Condensed', sans-serif;
+        visibility: hidden;
+        transition: 0.5s visibility ease-in-out;
 
     }
 
 </style>
 
 <div id="map">
-    <div class="quote">HELLO</div>
+    <div class="quote"></div>
 </div>
 <div id="features">
     <section id="intro" class="active">
@@ -220,11 +222,15 @@
         'intro': {
             center: { lon: 19.01589, lat: 6.67602 },
             zoom: 1.96,
+            pitch: 0.00,
+            bearing: 0.00
         },
         'chapter-1': {
             duration: 3000,
             center: { lon: 18.74352, lat: 1.42789 },
             zoom: 3,
+            pitch: 0.00,
+            bearing: 0.00
         },
         'chapter-2': {
             duration: 3000,
@@ -345,11 +351,15 @@
 
             const quote = $('.quote');
             const quotedChapters = ['chapter-4', 'chapter-5', 'chapter-6'];
+            quote.css('visibility', 'hidden');
+
             quotedChapters.forEach(chapter => {
                 if (chapterName === chapter) {
                     quote.css('color', quoteMap[chapter].color);
+                    quote.css('visibility', 'visible');
                     quote.text(quoteMap[chapter].quote_alt);
                 }
+
             });
 
             if (isElementOnScreen(chapterName)) {

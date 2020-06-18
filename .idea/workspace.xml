@@ -14,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4220238">
+    <splitter split-orientation="horizontal" split-proportion="0.61011904">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -29,14 +29,14 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-682">
-                  <caret line="282" column="25" selection-start-line="282" selection-start-column="25" selection-end-line="282" selection-end-column="25" />
+                <state relative-caret-position="377">
+                  <caret line="222" column="14" selection-start-line="222" selection-start-column="14" selection-end-line="222" selection-end-column="14" />
                   <folding>
                     <element signature="e#1845#1966#0" expanded="true" />
-                    <element signature="e#4654#4676#0" expanded="true" />
-                    <element signature="e#4797#4819#0" expanded="true" />
-                    <element signature="e#4897#4919#0" expanded="true" />
-                    <element signature="e#5030#5052#0" expanded="true" />
+                    <element signature="n#style#0;n#strong#0;n#p#1;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#strong#0;n#p#2;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#strong#0;n#p#3;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#strong#0;n#p#4;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -67,14 +67,14 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
+                <state relative-caret-position="235">
+                  <caret line="55" selection-start-line="54" selection-end-line="55" />
                   <folding>
                     <element signature="e#1845#1966#0" expanded="true" />
-                    <element signature="e#4644#4666#0" expanded="true" />
-                    <element signature="e#4744#4766#0" expanded="true" />
-                    <element signature="e#4842#4864#0" expanded="true" />
-                    <element signature="e#4961#4983#0" expanded="true" />
+                    <element signature="n#style#0;n#strong#0;n#p#1;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#strong#0;n#p#2;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#strong#0;n#p#3;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#strong#0;n#p#4;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -90,6 +90,11 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>[2]</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -157,12 +162,12 @@
       <updated>1590948001865</updated>
       <workItem from="1590948004534" duration="10860000" />
       <workItem from="1591619030623" duration="772000" />
-      <workItem from="1592343938045" duration="12267000" />
+      <workItem from="1592343938045" duration="13846000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23899000" />
+    <option name="totallyTimeSpent" value="25478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -214,14 +219,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
+        <state relative-caret-position="377">
+          <caret line="222" column="14" selection-start-line="222" selection-start-column="14" selection-end-line="222" selection-end-column="14" />
           <folding>
             <element signature="e#1845#1966#0" expanded="true" />
-            <element signature="e#4644#4666#0" expanded="true" />
-            <element signature="e#4744#4766#0" expanded="true" />
-            <element signature="e#4842#4864#0" expanded="true" />
-            <element signature="e#4961#4983#0" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#p#1;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#p#2;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#p#3;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#p#4;n#section#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

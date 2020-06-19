@@ -9,10 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
 
     <style>
@@ -25,19 +22,22 @@
     body {
         background: #000;
         font-family: 'Open Sans', sans-serif;
+        cursor: default;
     }
+
     #map {
         position: fixed;
         width: 70%;
     }
+
     #features {
         width: 30%;
         margin-left: 70%;
-        /*font-family: sans-serif;*/
         overflow-y: scroll;
         background-color: rgba(255, 255, 255, 0.1);
         color: papayawhip;
     }
+
     section {
         padding: 25px 50px;
         line-height: 25px;
@@ -46,12 +46,14 @@
         font-size: 18px;
         font-weight: 200;
     }
+
     section.active {
         opacity: 1;
     }
+
     section:last-child {
         border-bottom: none;
-        margin-bottom: 200px;
+        /*margin-bottom: 200px;*/
     }
 
     a {
@@ -61,17 +63,14 @@
     }
 
     h1 {
-        /*font-size: 36px;*/
         font-size: 2rem;
         line-height: 2rem;
         color: wheat;
-        /*font-family: 'Bitter', serif;*/
         font-family: 'Crimson Text', serif;
 
     }
     h2 {
         color: wheat;
-        /*font-family: 'Bitter', serif;*/
         font-family: 'Crimson Text', serif;
 
     }
@@ -92,7 +91,33 @@
         line-height: 1.75rem;
         font-family: 'Open Sans Condensed', sans-serif;
         visibility: hidden;
-        /*transition: 0.5s visibility ease-in-out;*/
+    }
+
+    sup {
+        color: #c1be96;
+        cursor: pointer;
+        font-size: 0.75rem;
+    }
+
+    .citation {
+        color: #c1be96;
+        font-size: 0.75rem;
+    }
+
+    .block {
+        background: rgba(255,255,230,0.2);
+        color: papayawhip;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-weight: 200;
+    }
+
+    #citation-1 {
+        margin-top: 2rem;
+    }
+
+    .source {
+        font-size: 0.75rem;
     }
 
 </style>
@@ -103,7 +128,7 @@
 <div id="features">
     <section id="intro" class="active">
         <h1>Colonizability of Africa</h1>
-        <div class="tmp" style="background: rgba(255,255,230,0.2); color: papayawhip; padding: 0.5rem 1rem; border-radius: 4px; font-weight: 200;">
+        <div class="block" style="">
         <p>
             Part of the map series created by John George Bartholomew (cartographer) and Harry Hamilton Johnston
             (author) in <a href="https://library.si.edu/digital-library/book/historyofcoloni00john" target="_blank">
@@ -199,45 +224,38 @@
     <section id="chapter-7">
         <h2>Conclusion</h2>
 
-        <p>
+        <div class="block">
+            <p>
             While Johnston's overt racism is jarring in a modern context, it is indicative of a centuries-long global
             conquest from European powers. Preceding an era of intentionally downplaying black African settlements,
             <em>Colonizability of Africa</em> is remarkable for its accurate scale and labeling of the continent, which
             is emblematic of its purpose to define Africa as an untapped resource. It is also notable for its
             unorthodox use of color, highlighting desirable areas in red and yellow, which are typically used to
             indicate badness or danger.
-        </p>
-        <p>
+            </p>
+        </div>
+
+        <p id="citation-1" class="citation">
             [1] Schomburg Center for Research in Black Culture, Jean Blackwell Hutson Research and Reference Division,
             The New York Public Library. "Colonizability of Africa" New York Public Library Digital Collections.
             Accessed June 18, 2020. http://digitalcollections.nypl.org/items/510d47df-fd22-a3d9-e040-e00a18064a99
         </p>
-        <p>
+        <p class="citation">
             [2] Kelso, C. "Ideology Of Mapping In Apartheid South Africa." South African Geographical Journal 81, no. 1
             (1999): 15-21. doi:10.1080/03736245.1999.9713657.
         </p>
-        <p>
+        <p class="citation">
             [3] Tyner, Judith A. "Persuasive Cartography." Journal of Geography 81, no. 4 (1982).
         </p>
-        <p>
+        <p class="citation">
             [4] Schulten, Susan. "The Cartographic Consolidation of America." In Mapping the Nation: History and
             Cartography in Nineteenth-century America. Chicago: University of Chicago Press, 2013.
         </p>
-<!--        <div class="box" style="height: 500px; width: 100%; background: transparent;"></div>-->
-<!--        <footer>Map created by Lauren Oldham</footer>-->
-<!--        <h2>Charing Cross Hotel</h2>-->
-<!--        <p>-->
-<!--            Walter writes to Oberstein and convinces him to meet in the smoking-->
-<!--            room of the Charing Cross Hotel where he promises additional plans-->
-<!--            for the submarine in exchange for money. The plan works and Holmes-->
-<!--            and Watson catch both criminals.-->
-<!--        </p>-->
-<!--        <small id="citation">-->
-<!--            Adapted from-->
-<!--            <a href="http://www.gutenberg.org/files/2346/2346-h/2346-h.htm"-->
-<!--            >Project Gutenberg</a-->
-<!--            >-->
-<!--        </small>-->
+        <p class="citation">
+            [5] Johnston, Harry. A history of the colonization of Africa by alien races. Cambridge: University Press,
+            444-445, doi: https://doi.org/10.5479/sil.792626.39088018043364
+        </p>
+        <div class="source">Map narrative by Lauren Oldham, MAP-701 June 2020.</div>
     </section>
 </div>
 <script>
@@ -322,7 +340,7 @@
             no dense native population to dispute by force or by an appeal
             to common fairness the possession of the soil. These lands of
             the first category are of relatively small extent compared to the
-            mass of Africa."`,
+            mass of Africa." <sup>[5]</sup>`,
             quote_alt: `"There is, to begin with, that much
             restricted healthy area lying outside the tropics (or in rare
             instances, at great altitudes inside the tropics), where the
@@ -333,7 +351,7 @@
             no dense native population to dispute by force or by an appeal
             to common fairness the possession of the soil. These lands of
             the first category are of relatively small extent compared to the
-            mass of Africa."`
+            mass of Africa." <sup>[5]</sup>`
         },
         'chapter-5': {
             color: '#fdeb7f',
@@ -342,7 +360,7 @@
             settlement of Europeans, but where the competition or numerical
             strength or martial spirit of the natives already in possession
             are factors opposed to the substitution of a large European
-            population for the present owners of the soil."`,
+            population for the present owners of the soil." <sup>[5]</sup>`,
             quote_alt: `"The second description of
             territory I should qualify as 'tributary states,' countries where
             good and settled government cannot be maintained by the
@@ -350,14 +368,14 @@
             power retaining in return for the expense and trouble of such
             control the gratification of performing a good and interesting
             work, and a field of employment and profitable enterprise for a
-            few of her choicer sons and daughters."`
+            few of her choicer sons and daughters." <sup>[5]</sup>`
         },
         'chapter-6': {
             color: '#c0b887',
             quote: `"The third category consists of the remainder of Africa,
             mainly tropical, where the climatic conditions make it impossible
             for Europeans to cultivate the soil with their own hands, to
-            settle for many years, or to bring up healthy families."`,
+            settle for many years, or to bring up healthy families." <sup>[5]</sup>`,
             quote_alt: `"The third category
             consists of 'plantation colonies'—vast territories to be governed
             as India is governed, autocratically but wisely and as far as
@@ -367,15 +385,15 @@
             mentality to the European. Here, however, the European may
             come, in small numbers, with his capital, his energy, and his
             knowledge to develop a most lucrative commerce, and obtain
-            products necessary to the use of his advanced civilization."`
+            products necessary to the use of his advanced civilization." <sup>[5]</sup>`
         }
     };
 
     // On every scroll event, check which element is on screen
     window.onscroll = function() {
-        var chapterNames = Object.keys(chapters);
-        for (var i = 0; i < chapterNames.length; i++) {
-            var chapterName = chapterNames[i];
+        const chapterNames = Object.keys(chapters);
+        for (let i = 0; i < chapterNames.length; i++) {
+            const chapterName = chapterNames[i];
 
             const quote = $('.quote');
             const quotedChapters = ['chapter-4', 'chapter-5', 'chapter-6'];
@@ -385,9 +403,9 @@
                 if (chapterName === chapter) {
                     // quote.css('color', quoteMap[chapter].color);
                     quote.css('visibility', 'visible');
-                    quote.text(quoteMap[chapter].quote_alt);
+                    quote.html(quoteMap[chapter].quote_alt);
+                    citationClick();
                 }
-
             });
 
             if (isElementOnScreen(chapterName)) {
@@ -397,7 +415,15 @@
         }
     };
 
-    var activeChapterName = 'intro';
+    function citationClick() {
+        $('sup').on('click', () => {
+            $(window).scrollTop($(`#citation-1`).offset().top - 100);
+        });
+    }
+
+    citationClick();
+
+    let activeChapterName = 'intro';
     function setActiveChapter(chapterName) {
         if (chapterName === activeChapterName) return;
 
@@ -410,8 +436,8 @@
     }
 
     function isElementOnScreen(id) {
-        var element = document.getElementById(id);
-        var bounds = element.getBoundingClientRect();
+        const element = document.getElementById(id);
+        const bounds = element.getBoundingClientRect();
         return bounds.top < window.innerHeight && bounds.bottom > 400;
     }
 

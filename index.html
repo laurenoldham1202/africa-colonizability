@@ -146,7 +146,7 @@
         </p>
         </div>
     </section>
-    <section id="chapter-8">
+    <section id="chapter-1">
         <h2>Mapping and Power</h2>
 
         <p>
@@ -159,33 +159,47 @@
         </p>
 
     </section>
-    <section id="chapter-9">
+    <section id="chapter-2">
         <h2>Mapping and Power (continued)</h2>
         <p>
             <em>Colonizability of Africa</em> exemplifies these power dynamics. Harry Hamilton Johnston, a British
-            explorer and colonial administrator <sup>[7]</sup>, sees Africa as nothing more than a resource and opportunity to spread
-            European influence. The continent is carved up into different areas of suitability for European preferences
-            with no regard for existing groups, cultures, or land rights.
+            explorer and colonial administrator <sup>[7]</sup>, sees Africa as nothing more than a resource and
+            opportunity to spread European influence. The continent is carved up into different areas of suitability for
+            European preferences with no regard for existing groups, cultures, or land rights.
         </p>
     </section>
-    <section id="chapter-1">
+    <section id="chapter-10">
+        <h2>Borders</h2>
+        <p>
+            Johnston's map indicates a complete lack of regard for any existing African borders. Faint lines crisscross
+            the continent, but they are hardly discernible if not actively looked for. The message is clear: the only
+            important demarcations on the map are the discrete groupings of 'healthy' and 'unhealthy' areas. Mapping
+            borders (or intentionally excluding them) is a important tool in asserting territorial rights <sup>[8]</sup>,
+            which is exactly the intent here.
+        </p>
+    </section>
+
+    <section id="chapter-3">
         <h2>Map Scale</h2>
         <p>
-            Immediately of note is the <strong>accurate scale representation of the African continent</strong>.
+            Also of note is the <strong>accurate scale representation of the African continent</strong>.
         </p>
         <p>
-            Many of the most popular maps are in the Mercator projection, which is commonly critiqued for its minimization
-            of Africa - the continent is represented much smaller than its actual area, whereas Western areas are inflated.
-            (Tools such as <a href="https://thetruesize.com/" target="_blank">The True Size</a> challenge popular map
-            misconceptions.)
+            Many of the most popular maps are in the Mercator projection, which is commonly critiqued for its (outright
+            racist) minimization of Africa, with Western/Europeans areas inflated and the African continent shrunken
+            <sup>[9] *</sup>.
         </p>
         <p>
-            <em>Colonizability of Africa</em> highlights the vastness of the continent. In this case, it was
-            important to <strong>emphasize</strong> the true size of Africa, and therefore its extent of possible
-            colonization and resources.
+            <em>Colonizability of Africa</em> flips the script by highlighting the vastness of the continent. In this
+            case, it was important to <strong>emphasize</strong> the true size of Africa, and therefore its extent of
+            possible colonization and resources.
         </p>
+        <small>
+            * Tools such as <a href="https://thetruesize.com/" target="_blank">The True Size</a> challenge popular map
+            misconceptions.
+        </small>
     </section>
-    <section id="chapter-2">
+    <section id="chapter-4">
         <h2>City and Place Labels</h2>
         <p>
             Juxtaposing C. Kelso's examples of map styles used to hide or minimize black African settlements as opposed
@@ -199,7 +213,7 @@
             potentially hazardous or difficult areas to settle.
         </p>
     </section>
-    <section id="chapter-3">
+    <section id="chapter-5">
         <h2>Color</h2>
         <p>Bartholomew utilized four discrete colors to represent Johnston's four divisions of Africa:</p>
         <p><strong style="color: #e1a572">Red</strong> represents 'Healthy colonizable Africa.'</p>
@@ -207,7 +221,7 @@
         <p><strong style="color: #c0b887">Light grey/beige</strong> represents 'Unhealthy but exploitable Africa.'</p>
         <p><strong style="color: #5b4f2b">Slate grey</strong> represents 'Unhealthy Africa.'</p>
     </section>
-    <section id="chapter-4">
+    <section id="chapter-6">
         <h2>Red</h2>
         <p>
             Judith Tyner describes the influence of color on propaganda maps in her work <em>Persuasive Cartography</em>
@@ -220,7 +234,7 @@
             desirable, colonizable areas of Africa.
         </p>
     </section>
-    <section id="chapter-5">
+    <section id="chapter-7">
         <h2>Yellow</h2>
         <p>
             Yellow generally has bright, happy connotations (sunshine and flowers and birds, oh my!), but when used in
@@ -233,7 +247,7 @@
             <!-- top 445 -->
         </p>
     </section>
-    <section id="chapter-6">
+    <section id="chapter-8">
         <h2>Unhealthy Africa</h2>
         <p>
             The remainder of the continent is defined as <em>unhealthy Africa</em>. Interestingly, Johnston acknowledges
@@ -245,7 +259,7 @@
             Europeans. Africa was nothing more than an opportunity for more land, wealth, and resources for colonizers.
         </p>
     </section>
-    <section id="chapter-7">
+    <section id="chapter-9">
         <h2>Conclusion</h2>
 
         <div class="block">
@@ -286,7 +300,7 @@
 </div>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmVub2xkaGFtMTIwMiIsImEiOiJjaW55dm52N2gxODJrdWtseWZ5czAyZmp5In0.YkEUt6GvIDujjudu187eyA';
-    var map = new mapboxgl.Map({
+    const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/laurenoldham1202/ckavgd6ov3rq41ipbbdvpbmdu',
         center: { lon: 19.01589, lat: 6.67602 },
@@ -295,7 +309,7 @@
         bearing: 0.00
     });
 
-    var chapters = {
+    const chapters = {
         'intro': {
             center: { lon: 19.01589, lat: 6.67602 },
             zoom: 1.96,
@@ -304,57 +318,64 @@
         },
         'chapter-1': {
             duration: 3000,
+            center: { lon: 22.11696, lat: 48.17264 },
+            zoom: 3.19,
+            pitch: 0.00,
+            bearing: 0.00
+        },
+        'chapter-2': {
+            duration: 3000,
             center: { lon: 18.74352, lat: 1.42789 },
             zoom: 3,
             pitch: 0.00,
             bearing: 0.00
         },
-        'chapter-2': {
+        'chapter-10': {
+            duration: 3000,
+            center: { lon: 7.09147, lat: 25.42734 },
+            zoom: 3.64,
+            pitch: 0.00,
+            bearing: 0.00
+        },
+        'chapter-3': {
+            duration: 3000,
+            center: { lon: 18.74352, lat: 1.42789 },
+            zoom: 3,
+            pitch: 0.00,
+            bearing: 0.00
+        },
+        'chapter-4': {
             duration: 3000,
             center: { lon: 34.16387, lat: -25.14991 },
             zoom: 4.31,
             pitch: 0,
             bearing: 0
         },
-        'chapter-3': {
+        'chapter-5': {
             duration: 3000,
             center: { lon: -18.57624, lat: -46.20872 },
             zoom: 5.25,
             pitch: 19.50,
             bearing: 90
         },
-        'chapter-4': {
+        'chapter-6': {
             duration: 3000,
             center: { lon: 24.80847, lat: -25.69372 },
             zoom: 4.09,
             pitch: 0.00,
             bearing: 0.00
         },
-        'chapter-5': {
+        'chapter-7': {
             duration: 3000,
             center: { lon: 18.23104, lat: 23.25320 },
             zoom: 3.61,
             pitch: 0.00,
             bearing: 0.00
         },
-        'chapter-6': {
+        'chapter-8': {
             duration: 3000,
             center: { lon: 23.35101, lat: -2.61326 },
             zoom: 4.01,
-            pitch: 0.00,
-            bearing: 0.00
-        },
-        'chapter-7': {
-            duration: 3000,
-            center: { lon: 18.74352, lat: 1.42789 },
-            zoom: 3,
-            pitch: 0.00,
-            bearing: 0.00
-        },
-        'chapter-8': {
-            duration: 3000,
-            center: { lon: 22.11696, lat: 48.17264 },
-            zoom: 3.19,
             pitch: 0.00,
             bearing: 0.00
         },
@@ -365,6 +386,7 @@
             pitch: 0.00,
             bearing: 0.00
         },
+
     };
 
     quoteMap = {

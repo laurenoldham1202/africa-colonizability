@@ -1,10 +1,11 @@
 # Colonizability of Africa
 
-Final project for MAP-701: History of Critical Cartography, New Maps Plus (MS in Digital Mapping from the University of Kentucky)
-
 ##### Map narrative by Lauren Oldham, June 2020.
 
----
+
+Final project for MAP-701: History of Critical Cartography
+[New Maps Plus](https://newmapsplus.as.uky.edu/), Master of Science in Digital Mapping from the University of Kentucky
+
 
 ### About the Project
 
@@ -12,6 +13,8 @@ This interactive map provides a critical analysis of the map _Colonizability of 
 (cartographer) and Harry Hamilton Johnston (author) from the book [A History of the Colonization of Africa by Alien 
 Races](https://library.si.edu/digital-library/book/historyofcoloni00john). The map was provided by the New York Public 
 Library [Digital Collections](https://digitalcollections.nypl.org/items/510d47df-fd22-a3d9-e040-e00a18064a99).
+
+[Explore the map here!](https://laurenoldham1202.github.io/africa-colonizability/)
 
 ### Sources
 

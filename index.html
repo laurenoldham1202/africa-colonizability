@@ -19,23 +19,28 @@
 </head>
 <body>
 <style>
+    a {
+        color: #A1B6C8;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
     body {
         background: #000;
         font-family: 'Open Sans', sans-serif;
         cursor: default;
     }
 
-    #map {
-        position: fixed;
-        width: 70%;
+    h1 {
+        font-size: 2rem;
+        line-height: 2rem;
+        color: wheat;
+        font-family: 'Crimson Text', serif;
     }
 
-    #features {
-        width: 30%;
-        margin-left: 70%;
-        overflow-y: scroll;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: papayawhip;
+    h2 {
+        color: wheat;
+        font-family: 'Crimson Text', serif;
     }
 
     section {
@@ -55,23 +60,40 @@
         border-bottom: none;
     }
 
-    a {
-        color: #A1B6C8;
-        font-weight: 600;
-        text-decoration: none;
+    sup {
+        color: #c1be96;
+        cursor: pointer;
+        font-size: 0.75rem;
     }
 
-    h1 {
-        font-size: 2rem;
-        line-height: 2rem;
-        color: wheat;
-        font-family: 'Crimson Text', serif;
-
+    #citation-1 {
+        margin-top: 2rem;
     }
-    h2 {
-        color: wheat;
-        font-family: 'Crimson Text', serif;
 
+    #features {
+        width: 30%;
+        margin-left: 70%;
+        overflow-y: scroll;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: papayawhip;
+    }
+
+    #map {
+        position: fixed;
+        width: 70%;
+    }
+
+    .block {
+        background: rgba(255,255,230,0.2);
+        color: papayawhip;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-weight: 200;
+    }
+
+    .citation {
+        color: #c1be96;
+        font-size: 0.75rem;
     }
 
     .quote {
@@ -90,29 +112,6 @@
         line-height: 1.75rem;
         font-family: 'Open Sans Condensed', sans-serif;
         visibility: hidden;
-    }
-
-    sup {
-        color: #c1be96;
-        cursor: pointer;
-        font-size: 0.75rem;
-    }
-
-    .citation {
-        color: #c1be96;
-        font-size: 0.75rem;
-    }
-
-    .block {
-        background: rgba(255,255,230,0.2);
-        color: papayawhip;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        font-weight: 200;
-    }
-
-    #citation-1 {
-        margin-top: 2rem;
     }
 
     .source {
@@ -277,6 +276,9 @@
             indicate badness or danger.
             </p>
         </div>
+    </section>
+    <section id="chapter-11">
+        <h2>Sources</h2>
 
         <p id="citation-1" class="citation">
             [1] Schomburg Center for Research in Black Culture, Jean Blackwell Hutson Research and Reference Division,
@@ -294,7 +296,7 @@
             [4] “Keep Out! Absentee Landlords.” No Dig, No Fly, No Go: How Maps Restrict and Control, by Mark S.
             Monmonier, University of Chicago Press, 2010, pp. 30–69.
         </p>
-        <p class="class">
+        <p class="citation">
             [5] Crampton, Jeremy. “The Power of Maps.” Introducing Human Geographies, by Paul J. Cloke et al.,
             Routledge, 2014, pp. 192–202.
         </p>
@@ -405,7 +407,13 @@
             pitch: 0.00,
             bearing: 0.00
         },
-
+        'chapter-11': {
+            duration: 3000,
+            center: { lon: 19.01589, lat: 6.67602 },
+            zoom: 1.96,
+            pitch: 0.00,
+            bearing: 0.00
+        },
     };
 
     quoteMap = {

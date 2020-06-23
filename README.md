@@ -4,6 +4,7 @@
 
 
 Final project for MAP-701: History of Critical Cartography
+
 [New Maps Plus](https://newmapsplus.as.uky.edu/), Master of Science in Digital Mapping from the University of Kentucky
 
 
